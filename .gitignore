@@ -1,0 +1,25 @@
+# Compiled Binaries & Object files
+*.o
+*.obj
+*.exe
+*.out
+*.app
+phase-1-core-algorithms-data/test
+phase-2-backend-api/client
+phase-2-backend-api/server
+
+# Build directories
+build/
+bin/
+dist/
+
+# IDE / Editor configuration
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,348 @@
+{
+  "edges": {
+    "ALM__BAG__31": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 72.3,
+      "real": true,
+      "trafficLevel": "medium",
+      "weight": 101.2
+    },
+    "ALM__CHP__34": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 130.5,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 182.7
+    },
+    "ALM__DWA__32": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 58.4,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 75.9
+    },
+    "ALM__PIT__33": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 113.5,
+      "real": true,
+      "trafficLevel": "high",
+      "weight": 170.3
+    },
+    "BAG__DWA__38": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 71.0,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 99.4
+    },
+    "CHA__BAG__42": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 146.9,
+      "real": true,
+      "trafficLevel": "medium",
+      "weight": 249.7
+    },
+    "CHA__JOS__14": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 61.4,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 98.2
+    },
+    "CHP__HAL__40": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 170.5,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 221.7
+    },
+    "CHP__RUD2__39": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 164.1,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 196.9
+    },
+    "DEH__CHK__2": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 87.4,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 122.4
+    },
+    "DEH__HRS__0": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 50.2,
+      "real": true,
+      "trafficLevel": "medium",
+      "weight": 55.2
+    },
+    "DEH__NEW__4": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 127.9,
+      "real": true,
+      "trafficLevel": "medium",
+      "weight": 166.3
+    },
+    "DEH__RKS__1": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 43.0,
+      "real": true,
+      "trafficLevel": "high",
+      "weight": 47.3
+    },
+    "DEH__UTK__3": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 139.3,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 209.0
+    },
+    "GHT__RUD__18": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 82.5,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 123.8
+    },
+    "HAL__KAS__26": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 74.0,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 81.4
+    },
+    "HAL__NTL__24": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 47.9,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 62.3
+    },
+    "HAL__RAN__27": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 53.3,
+      "real": true,
+      "trafficLevel": "medium",
+      "weight": 64.0
+    },
+    "HAL__RUD2__25": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 33.8,
+      "real": true,
+      "trafficLevel": "medium",
+      "weight": 37.2
+    },
+    "JOS__BAD__15": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 38.9,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 70.0
+    },
+    "LAM__HRS__23": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 121.7,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 146.0
+    },
+    "LAM__PAU__22": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 80.9,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 105.2
+    },
+    "NEW__GHT__17": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 38.1,
+      "real": true,
+      "trafficLevel": "medium",
+      "weight": 53.3
+    },
+    "NTL__ALM__28": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 63.2,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 82.2
+    },
+    "NTL__DWA__29": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 82.5,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 115.5
+    },
+    "PAU__DWA__41": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 239.5,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 359.3
+    },
+    "PAU__SRN__8": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 29.0,
+      "real": true,
+      "trafficLevel": "high",
+      "weight": 37.7
+    },
+    "PIT__BAG__35": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 122.6,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 183.9
+    },
+    "PIT__CHP__37": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 73.7,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 103.2
+    },
+    "PIT__MUS__36": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 124.5,
+      "real": true,
+      "trafficLevel": "medium",
+      "weight": 224.1
+    },
+    "RAN__KAS__30": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 27.2,
+      "real": true,
+      "trafficLevel": "high",
+      "weight": 29.9
+    },
+    "RKS__HRS__5": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 19.7,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 21.7
+    },
+    "RKS__PAU__6": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 113.9,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 159.5
+    },
+    "RKS__TRH__7": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 81.5,
+      "real": true,
+      "trafficLevel": "high",
+      "weight": 106.0
+    },
+    "RUD__CHA__12": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 70.2,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 105.3
+    },
+    "RUD__GHT__13": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 82.5,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 123.8
+    },
+    "RUD__KED__11": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 74.1,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 148.2
+    },
+    "SRN__RUD__9": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 33.9,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 47.5
+    },
+    "SRN__TRH__10": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 57.6,
+      "real": true,
+      "trafficLevel": "high",
+      "weight": 74.9
+    },
+    "TRH__NEW__16": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 23.5,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 28.2
+    },
+    "UTK__GAN__19": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 99.6,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 179.3
+    },
+    "UTK__TRH__21": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 107.8,
+      "real": true,
+      "trafficLevel": "low",
+      "weight": 150.9
+    },
+    "UTK__YMU__20": {
+      "blockReason": "",
+      "blocked": false,
+      "distanceKm": 123.6,
+      "real": true,
+      "trafficLevel": "high",
+      "weight": 222.5
+    }
+  }
+}
