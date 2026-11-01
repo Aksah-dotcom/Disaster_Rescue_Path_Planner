@@ -13,7 +13,7 @@
       "blocked": false,
       "distanceKm": 130.5,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "high",
       "weight": 182.7
     },
     "ALM__DWA__32": {
@@ -21,7 +21,7 @@
       "blocked": false,
       "distanceKm": 58.4,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "high",
       "weight": 75.9
     },
     "ALM__PIT__33": {
@@ -29,7 +29,7 @@
       "blocked": false,
       "distanceKm": 113.5,
       "real": true,
-      "trafficLevel": "high",
+      "trafficLevel": "medium",
       "weight": 170.3
     },
     "BAG__DWA__38": {
@@ -37,7 +37,7 @@
       "blocked": false,
       "distanceKm": 71.0,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 99.4
     },
     "CHA__BAG__42": {
@@ -45,7 +45,7 @@
       "blocked": false,
       "distanceKm": 146.9,
       "real": true,
-      "trafficLevel": "medium",
+      "trafficLevel": "high",
       "weight": 249.7
     },
     "CHA__JOS__14": {
@@ -69,7 +69,7 @@
       "blocked": false,
       "distanceKm": 164.1,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 196.9
     },
     "DEH__CHK__2": {
@@ -77,7 +77,7 @@
       "blocked": false,
       "distanceKm": 87.4,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "high",
       "weight": 122.4
     },
     "DEH__HRS__0": {
@@ -85,7 +85,7 @@
       "blocked": false,
       "distanceKm": 50.2,
       "real": true,
-      "trafficLevel": "medium",
+      "trafficLevel": "low",
       "weight": 55.2
     },
     "DEH__NEW__4": {
@@ -101,7 +101,7 @@
       "blocked": false,
       "distanceKm": 43.0,
       "real": true,
-      "trafficLevel": "high",
+      "trafficLevel": "low",
       "weight": 47.3
     },
     "DEH__UTK__3": {
@@ -125,7 +125,7 @@
       "blocked": false,
       "distanceKm": 74.0,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 81.4
     },
     "HAL__NTL__24": {
@@ -133,7 +133,7 @@
       "blocked": false,
       "distanceKm": 47.9,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 62.3
     },
     "HAL__RAN__27": {
@@ -149,7 +149,7 @@
       "blocked": false,
       "distanceKm": 33.8,
       "real": true,
-      "trafficLevel": "medium",
+      "trafficLevel": "low",
       "weight": 37.2
     },
     "JOS__BAD__15": {
@@ -165,7 +165,7 @@
       "blocked": false,
       "distanceKm": 121.7,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 146.0
     },
     "LAM__PAU__22": {
@@ -173,7 +173,7 @@
       "blocked": false,
       "distanceKm": 80.9,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "high",
       "weight": 105.2
     },
     "NEW__GHT__17": {
@@ -181,7 +181,7 @@
       "blocked": false,
       "distanceKm": 38.1,
       "real": true,
-      "trafficLevel": "medium",
+      "trafficLevel": "low",
       "weight": 53.3
     },
     "NTL__ALM__28": {
@@ -189,7 +189,7 @@
       "blocked": false,
       "distanceKm": 63.2,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 82.2
     },
     "NTL__DWA__29": {
@@ -213,7 +213,7 @@
       "blocked": false,
       "distanceKm": 29.0,
       "real": true,
-      "trafficLevel": "high",
+      "trafficLevel": "low",
       "weight": 37.7
     },
     "PIT__BAG__35": {
@@ -221,7 +221,7 @@
       "blocked": false,
       "distanceKm": 122.6,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 183.9
     },
     "PIT__CHP__37": {
@@ -245,7 +245,7 @@
       "blocked": false,
       "distanceKm": 27.2,
       "real": true,
-      "trafficLevel": "high",
+      "trafficLevel": "low",
       "weight": 29.9
     },
     "RKS__HRS__5": {
@@ -253,7 +253,7 @@
       "blocked": false,
       "distanceKm": 19.7,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 21.7
     },
     "RKS__PAU__6": {
@@ -261,7 +261,7 @@
       "blocked": false,
       "distanceKm": 113.9,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 159.5
     },
     "RKS__TRH__7": {
@@ -269,7 +269,7 @@
       "blocked": false,
       "distanceKm": 81.5,
       "real": true,
-      "trafficLevel": "high",
+      "trafficLevel": "medium",
       "weight": 106.0
     },
     "RUD__CHA__12": {
@@ -293,7 +293,7 @@
       "blocked": false,
       "distanceKm": 74.1,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "high",
       "weight": 148.2
     },
     "SRN__RUD__9": {
@@ -325,7 +325,7 @@
       "blocked": false,
       "distanceKm": 99.6,
       "real": true,
-      "trafficLevel": "low",
+      "trafficLevel": "medium",
       "weight": 179.3
     },
     "UTK__TRH__21": {
@@ -341,7 +341,7 @@
       "blocked": false,
       "distanceKm": 123.6,
       "real": true,
-      "trafficLevel": "high",
+      "trafficLevel": "low",
       "weight": 222.5
     }
   }
