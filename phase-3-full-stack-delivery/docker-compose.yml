@@ -1,0 +1,11 @@
+services:
+  rescue-planner-cpp:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - rescue-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  rescue-data:

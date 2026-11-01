@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uttarakhand Disaster Rescue Path Planner</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Live Route Ops</div>
+      <h1>Uttarakhand Rescue Path Planner</h1>
+      <div class="subtitle">Graph routing with <b>BFS</b> · <b>DFS</b> · <b>Dijkstra</b> · <b>K-Shortest Paths</b>
+        across 25 real Garhwal &amp; Kumaon towns. Backend is C++; this frontend is plain HTML/CSS/JS, served
+        as static files by the same server (no CORS).</div>
+    </div>
+    <div class="status-col">
+      <div class="status-pill"><span class="dot" id="statusDot"></span><span id="blockedCount">connecting…</span></div>
+      <div class="sync-note" id="syncNote"></div>
+    </div>
+  </header>
+
+  <div id="apiWarning" class="api-warning" hidden>
+    Can't reach the API. Make sure the C++ server is running (<code>./server</code>) and reload this page.
+  </div>
+
+  <div class="grid">
+    <div class="card map-card">
+      <div class="map-title">
+        <span>Uttarakhand — Garhwal &amp; Kumaon</span>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <label style="display:flex;align-items:center;gap:5px;cursor:pointer;font-size:11.5px;color:var(--text);font-weight:500;">
+            <input type="checkbox" id="weatherToggle" checked style="accent-color:#1A73E8;cursor:pointer;"> ⛅ Live Weather Pins
+          </label>
+          <span class="map-hint">click road to block</span>
+        </div>
+      </div>
+      <div id="map"></div>
+      <div class="legend">
+        <span><span class="swatch" style="background:var(--traffic-low)"></span>light traffic</span>
+        <span><span class="swatch" style="background:var(--traffic-medium)"></span>moderate</span>
+        <span><span class="swatch" style="background:var(--traffic-high)"></span>heavy</span>
+        <span class="legend-divider"></span>
+        <span><span class="swatch" style="background:var(--alert)"></span>blocked</span>
+        <span><span class="swatch" style="background:var(--info)"></span>explored</span>
+        <span><span class="swatch" style="background:var(--path)"></span>chosen route</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="plan">Plan Route</button>
+        <button class="tab-btn" data-tab="journey">Active Journey</button>
+        <button class="tab-btn" data-tab="replay">Historical Replay</button>
+      </div>
+
+      <div class="tab-panel" id="tab-plan">
+        <div class="panel-title">Directions</div>
+        <div class="field-row"><select id="startSel"></select></div>
+        <div class="field-row" style="margin-top:6px;">
+          <button class="swap-btn" id="swapBtn" title="Swap">⇅</button>
+          <select id="endSel"></select>
+        </div>
+        <label>Algorithm</label>
+        <div class="algo-row">
+          <button class="algo-btn" data-a="bfs">BFS</button>
+          <button class="algo-btn" data-a="dfs">DFS</button>
+          <button class="algo-btn active" data-a="dijkstra">Dijkstra</button>
+          <button class="algo-btn" data-a="kshortest">K-Short</button>
+        </div>
+        <button class="run-btn" id="runBtn">Get Directions</button>
+        <div class="result" id="result"><div class="k">Run a plan to see the route.</div></div>
+        <div class="export-row" id="exportRow" hidden>
+          <button class="ghost-btn" id="exportBtn">⭳ Export PDF route sheet</button>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-journey" hidden>
+        <div class="panel-title">Active Journey (dynamic re-routing)</div>
+        <p class="hint-text">Starts a tracked journey along the currently planned route. Advance it step by
+          step to simulate a team moving — if you block a road they still need, they auto-reroute from
+          wherever they currently are.</p>
+        <button class="run-btn" id="startJourneyBtn">Start Journey on Current Route</button>
+        <div class="journey-status" id="journeyStatus"></div>
+        <button class="ghost-btn" id="advanceBtn" hidden>Advance Team One Step →</button>
+      </div>
+
+      <div class="tab-panel" id="tab-replay" hidden>
+        <div class="panel-title">Historical Replay</div>
+        <label>Scenario</label>
+        <select id="scenarioSel"></select>
+        <button class="run-btn" id="playReplayBtn">▶ Play Replay</button>
+        <div class="replay-log" id="replayLog"></div>
+      </div>
+
+      <div class="panel-title" style="margin-top:16px;">Ops Log</div>
+      <div class="console" id="console"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/offlineAlgorithms.js?v=3"></script>
+<script src="js/api.js?v=3"></script>
+<script src="js/app.js?v=6"></script>
+</body>
+</html>
