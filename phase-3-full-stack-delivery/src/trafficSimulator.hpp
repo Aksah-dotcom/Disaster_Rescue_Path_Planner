@@ -1,56 +1,135 @@
 #pragma once
-// trafficSimulator.hpp — port of backend/src/trafficSimulator.js
-//
-// JS used setInterval on Node's single-threaded event loop. C++ has no
-// event loop by default, so this spins up a real background thread that
-// sleeps and wakes on the same interval — functionally equivalent,
-// mechanically different (genuine OS-level concurrency vs. cooperative
-// single-threaded scheduling).
+
+// trafficSimulator.hpp
+// Deeksha's contribution: Improved Traffic Simulation
+// Features: Random Engine, Thread Management and Safe Shutdown
+
 #include <thread>
 #include <atomic>
 #include <chrono>
 #include <functional>
+#include <random>
+#include <mutex>
+#include <condition_variable>
+#include <algorithm>
+#include <utility>
+
 #include "graph.hpp"
 #include "trafficModel.hpp"
 
 class TrafficSimulator {
+
 public:
-    TrafficSimulator(Graph& g, int intervalMs, double changeProbability, std::function<void()> onChange)
-        : _graph(g), _intervalMs(intervalMs), _changeProbability(changeProbability), _onChange(std::move(onChange)) {}
+
+    TrafficSimulator(
+        Graph& g,
+        int intervalMs,
+        double changeProbability,
+        std::function<void()> onChange
+    )
+        : _graph(g),
+          _intervalMs(std::max(1, intervalMs)),
+          _changeProbability(
+              std::max(0.0, std::min(1.0, changeProbability))
+          ),
+          _onChange(std::move(onChange)) {}
+
+    TrafficSimulator(const TrafficSimulator&) = delete;
+    TrafficSimulator& operator=(const TrafficSimulator&) = delete;
 
     void start() {
-        _running = true;
-        _thread = std::thread([this] { run(); });
+
+        bool expected = false;
+
+        if (!_running.compare_exchange_strong(expected, true))
+            return;
+
+        try {
+            _thread = std::thread([this] {
+                run();
+            });
+        }
+        catch (...) {
+            _running = false;
+            throw;
+        }
     }
 
     void stop() {
+
         _running = false;
-        if (_thread.joinable()) _thread.join();
+
+        _cv.notify_all();
+
+        if (_thread.joinable())
+            _thread.join();
     }
 
-    ~TrafficSimulator() { stop(); }
+    ~TrafficSimulator() {
+        stop();
+    }
 
 private:
+
     void run() {
+
+        std::mt19937 generator(std::random_device{}());
+
+        std::bernoulli_distribution change(_changeProbability);
+
         while (_running) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(_intervalMs));
-            if (!_running) break;
+
+            {
+                std::unique_lock<std::mutex> lock(_mutex);
+
+                _cv.wait_for(
+                    lock,
+                    std::chrono::milliseconds(_intervalMs),
+                    [this] {
+                        return !_running.load();
+                    }
+                );
+            }
+
+            if (!_running)
+                break;
 
             bool mutated = false;
-            for (auto& [a, b, edgeId] : _graph.allUnblockedEdgeEndpoints()) {
-                double r = static_cast<double>(std::rand()) / RAND_MAX;
-                if (r > _changeProbability) continue;
-                _graph.setTraffic(a, b, trafficModel::randomLevel());
+
+            auto edges = _graph.allUnblockedEdgeEndpoints();
+
+            for (auto& [a, b, edgeId] : edges) {
+
+                if (!change(generator))
+                    continue;
+
+                _graph.setTraffic(
+                    a,
+                    b,
+                    trafficModel::randomLevel()
+                );
+
                 mutated = true;
             }
-            if (mutated && _onChange) _onChange();
+
+            if (mutated && _onChange)
+                _onChange();
         }
     }
 
     Graph& _graph;
+
     int _intervalMs;
+
     double _changeProbability;
+
     std::function<void()> _onChange;
+
     std::atomic<bool> _running{false};
+
     std::thread _thread;
+
+    std::mutex _mutex;
+
+    std::condition_variable _cv;
 };
