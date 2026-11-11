@@ -32,7 +32,11 @@ public:
         : id(makeSimpleId()), _graph(graph), _path(std::move(path)),
           _algorithm(std::move(algorithm)), _destination(std::move(destination)) {}
 
-    std::string currentNode() const { return _path[_pos]; }
+    //std::string currentNode() const { return _path[_pos]; }
+    std::string currentNode() const {
+    if (_path.empty() || _pos >= _path.size()) return "";
+    return _path[_pos];
+}
     std::vector<std::string> remainingPath() const { return {_path.begin() + _pos, _path.end()}; }
     std::vector<std::string> fullPath() const { return _path; }
     bool isComplete() const { return currentNode() == _destination; }
